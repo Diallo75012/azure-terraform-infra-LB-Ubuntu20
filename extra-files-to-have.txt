@@ -1,0 +1,39 @@
+# You will need to set some environment variables to be able to communicate with the Azure Cloud Provider
+# sudo set_azurecli_env_for_principal_login.sh
+echo "set client id"
+export ARM_CLIENT_ID="<Your Client ID>"
+
+echo "set client secret"
+export ARM_CLIENT_SECRET="<Your Client Secret>"
+
+echo "set subscription id"
+export ARM_SUBSCRIPTION_ID="<Your Subscription ID>"
+
+echo "set tenant id"
+export ARM_TENANT_ID="Your Tenant ID"
+
+# You Will need a file called "variable.tf"
+# sudo nano variable.tf
+
+variable "subscription_id" {
+    description = "Id of the subscription"
+    type        = string
+    default = "<Your Subscription ID>"
+}
+
+variable "client_id" {
+    description = "client_id"
+    type        = string
+    default = "<Your Client ID>"
+}
+
+variable "client_secret" {
+    description = "client_secret"
+    type        = string
+    default = "<Your Client Secret>"
+}
+
+variable "tenant_id" {
+    description = "tenant_id"
+    type        = string
+    default = "<You Tenant ID>"
